@@ -5,7 +5,7 @@
 ############################
 
 dir=~/dotfiles
-files=$(find -maxdepth 1 -path './*' -exec basename {} \;) # list of files/folders to symlink in homedir
+files=$(find . -maxdepth 1 -path './*' -exec basename {} \;) # list of files/folders to symlink in homedir
 
 # create symlinks 
 for file in $files; do
