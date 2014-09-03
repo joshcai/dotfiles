@@ -15,6 +15,7 @@ filetype plugin indent on
 syntax enable
 colorscheme molokai
 set cursorline
+set number
 set relativenumber
 set smartindent
 set incsearch
@@ -22,22 +23,15 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 imap jk <Esc>
-nnoremap <F5> :buffers<CR>:buffer<Space>
+noremap <F5> :w <cr>
+nnoremap <F6> :buffers<CR>:buffer<Space>
 
 let g:indentLine_color_term = 236
 let g:indentLine_char = '|'
 
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-function! NumberToggle()
-    if(&relativenumber == 1)
-      set number
-    else
-      set relativenumber
-  endif
-endfunc
+nnoremap <C-l> :set relativenumber! <cr>
 
-nnoremap <C-n> :call NumberToggle()<cr>
-
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+set laststatus=2
