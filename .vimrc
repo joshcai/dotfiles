@@ -15,7 +15,7 @@ filetype plugin indent on
 syntax enable
 colorscheme molokai
 set cursorline
-set number
+set relativenumber
 set smartindent
 set incsearch
 set tabstop=2
