@@ -9,11 +9,11 @@ files=$(find -maxdepth 1 -path './*' -exec basename {} \;) # list of files/folde
 
 # create symlinks 
 for file in $files; do
-  rm -rf ~/$file
-  echo "Creating symlink for $file."
-  ln -s $dir/$file ~/$file
+  if [ $file != ".git" ] && [ $file != "install.sh" ]; then
+    rm -rf ~/$file
+    echo "Creating symlink for $file."
+    ln -s $dir/$file ~/$file
+  fi
 done
-
-rm ~/install.sh
 
 source ~/.bashrc
