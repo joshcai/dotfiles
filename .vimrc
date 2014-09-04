@@ -25,13 +25,18 @@ set expandtab
 imap jk <Esc>
 noremap <F5> :w <cr>
 nnoremap <F6> :buffers<CR>:buffer<Space>
+nnoremap <C-l> :set relativenumber! <cr>
 
+" indentLine configuration
 let g:indentLine_color_term = 236
 let g:indentLine_char = '|'
 
+" NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-nnoremap <C-l> :set relativenumber! <cr>
-
+" vim-airline configuration
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
