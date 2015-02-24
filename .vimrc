@@ -7,7 +7,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
