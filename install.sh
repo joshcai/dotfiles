@@ -18,6 +18,4 @@ for file in $files; do
   fi
 done
 
-source ~/.bashrc
-
 vim +PluginInstall +qall
