@@ -4,14 +4,14 @@
 # This script creates symlinks from the home directory to all files and subdirectories in ~/dotfiles
 ############################
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone "https://github.com/gmarik/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
 
 dir=~/dotfiles
 files=$(find . -maxdepth 1 -path './*' -exec basename {} \;) # list of files/folders to symlink in homedir
 
 # create symlinks 
 for file in $files; do
-  if [ $file != ".git" ] && [ $file != "install.sh" ]; then
+  if [ $file != ".git" ] && [ $file != "install.sh" ] && [ $file != "LICENSE" ]; then
     rm -rf ~/$file
     echo "Creating symlink for $file."
     ln -s $dir/$file ~/$file
@@ -19,3 +19,5 @@ for file in $files; do
 done
 
 source ~/.bashrc
+
+vim +PluginInstall +qall
